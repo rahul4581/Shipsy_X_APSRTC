@@ -90,3 +90,80 @@ h1 {
     
     
 }
+/* BusNavbar.css */
+
+.bus-navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #1e90ff;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-title {
+  margin: 0 0 10px 0;
+}
+
+.filter-container {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filter-input,
+.filter-select {
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.filter-button {
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff9800;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #e68a00;
+}
+.bus-cards{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content: center;
+}
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 8px;
+}
+
+.pagination button {
+  padding: 6px 12px;
+  border: none;
+  background-color: #ddd;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.pagination button.active-page {
+  background-color: #0077ff;
+  color: white;
+}
+
+.pagination button:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}

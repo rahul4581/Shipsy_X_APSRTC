@@ -1,0 +1,68 @@
+/* BusCard.css */
+
+.bus-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  padding: 20px;
+  margin: 15px;
+  width: 30%;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.bus-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+.bus-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.bus-card-header h3 {
+  margin: 0;
+  color: #1e90ff;
+}
+
+.refrigeration {
+  font-size: 0.8rem;
+  font-weight: bold;
+  padding: 3px 8px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.refrigeration.yes {
+  background-color: #28a745;
+}
+
+.refrigeration.no {
+  background-color: #dc3545;
+}
+
+.bus-card-body p {
+  margin: 5px 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.bus-card-body strong {
+  color: #555;
+}
+.bus-card-footer button{
+    width:50%;
+    padding-top:5px;
+    padding-bottom:5px;
+    font-size:16px;
+    color:white;
+    background-color: #1e90ff;
+    font-weight: 900;
+    border:none;
+    cursor: pointer;
+}
