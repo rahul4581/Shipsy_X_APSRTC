@@ -23,7 +23,7 @@ function Booking() {
 
   const handleFilterClick = async(e) => {
     e.preventDefault();
-    const res=await axios.get("http://localhost:5000/api/bus/filter",{ params:{ search, route, refrigeration }});
+    const res=await axios.get("https://shipsy-x-apsrtc.onrender.com/api/bus/filter",{ params:{ search, route, refrigeration }});
     setBusData(res.data)
     // Backend filter API call
   };
@@ -31,7 +31,7 @@ function Booking() {
   useEffect(() => {
     const getBusData = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/bus/getBusData");
+        const res = await axios.get("https://shipsy-x-apsrtc.onrender.com/api/bus/getBusData");
         setBusData(res.data);
         console.log("res.data:", res.data);
       } catch (err) {

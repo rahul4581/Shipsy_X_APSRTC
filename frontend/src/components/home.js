@@ -19,7 +19,7 @@ function Home(){
         try {
             const token = localStorage.getItem("token");
 
-            const res = await fetch("http://localhost:5000/api/order/myOrders", {
+            const res = await fetch("https://shipsy-x-apsrtc.onrender.com/api/order/myOrders", {
             headers: {
                 "Content-Type": "application/json",
                 Authorization: `Bearer ${token}`, // Pass token for authentication

@@ -7,7 +7,7 @@ const OrderCard = ({ order }) => {
   const navigate=useNavigate();
   const handleCancel = async (orderId) => {
     try {
-      await axios.delete(`http://localhost:5000/api/order/${orderId}`, {
+      await axios.delete(`https://shipsy-x-apsrtc.onrender.com/api/order/${orderId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

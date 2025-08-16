@@ -12,7 +12,7 @@ const BusCard = ({ bus }) => {
     const token=localStorage.getItem("token");
     console.log(bus)
     console.log(token);
-    const res = await fetch("http://localhost:5000/api/order/postOrder", {
+    const res = await fetch("https://shipsy-x-apsrtc.onrender.com/api/order/postOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
