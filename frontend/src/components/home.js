@@ -1,4 +1,4 @@
-import { use } from "react";
+import { useState,useEffect } from "react";
 import "../styles/home.css"
 import { SlSocialInstagram } from "react-icons/sl";
 import { SlSocialTwitter } from "react-icons/sl";
@@ -8,9 +8,32 @@ import { FaHandshakeSimple } from "react-icons/fa6";
 import { RiAddLargeFill } from "react-icons/ri";
 
 import {Outlet,useNavigate} from "react-router-dom";
+
+import OrderCard from "./orderCard.js";
 function Home(){
     const navigate=useNavigate();
     const dash=require("../assets/dash.png")
+    const [orders,setOrders] =useState([]);
+    useEffect(() => {
+        const fetchOrders = async () => {
+        try {
+            const token = localStorage.getItem("token");
+
+            const res = await fetch("http://localhost:5000/api/order/myOrders", {
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`, // Pass token for authentication
+            },
+            });
+
+            const data = await res.json();
+            console.log(data);
+            setOrders(data); // Update state with fetched orders
+        } catch (error) {
+            console.error("Error fetching orders:", error);
+        }};
+        fetchOrders();
+    }, []); 
     return (
         <div className="homeContainer">
             <div className="navbar">
@@ -22,6 +45,20 @@ function Home(){
             </div>
             <div className="dashboard">
                 <div><img src={dash} className="dashimg"/> </div>
+                <div className="heading2"> <h1>My Orders</h1></div>
+                <div className ="orders">
+                    {
+                        orders.length>0 ? (
+                            orders.map ((order)=>(
+                                <OrderCard key={order._id} order={order}/>
+                            ))
+                        )
+
+                        :(
+                            <p>No orders found</p>
+                        )
+                    }
+                </div>
                 <div className="addJob"><RiAddLargeFill onClick={() => navigate("/booking")}/></div>
             </div>
             <div className="footer">

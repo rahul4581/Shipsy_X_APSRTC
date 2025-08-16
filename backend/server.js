@@ -5,7 +5,7 @@ import cors from 'cors';
 
 import authRoutes from './routes/authRoutes.js';
 import busRoutes from './routes/busRoutes.js';
-
+import orderRoutes from './routes/orderRoutes.js';
 
 dotenv.config();
 
@@ -15,10 +15,11 @@ app.use(cors({
   credentials: true,
 }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true })); // 
 
 app.use('/api/auth', authRoutes);
 app.use('/api/bus',busRoutes);
-
+app.use('/api/order',orderRoutes);
 
 mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,

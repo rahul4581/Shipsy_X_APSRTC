@@ -21,9 +21,11 @@ function Booking() {
   const [displayedBuses, setDisplayedBuses] = useState([]);
   const itemsPerPage = 6;
 
-  const handleFilterClick = () => {
+  const handleFilterClick = async(e) => {
+    e.preventDefault();
+    const res=await axios.get("http://localhost:5000/api/bus/filter",{ params:{ search, route, refrigeration }});
+    setBusData(res.data)
     // Backend filter API call
-    console.log({ search, route, refrigeration });
   };
 
   useEffect(() => {

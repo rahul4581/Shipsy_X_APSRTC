@@ -15,7 +15,6 @@ const handleSubmit = async (e) => {
   e.preventDefault();
   try {
     const response = await axios.post("http://localhost:5000/api/auth/login", form);
-
     // ✅ STEP 1: Console the response to verify structure
     console.log("Login response:", response.data);
 
@@ -32,10 +31,6 @@ const handleSubmit = async (e) => {
 
   return (
     <div className="login-container">
-      <div className="heading">
-        <div><h1>jobhunt</h1></div>
-        <div><IoSearchOutline className="search-icon"/></div>
-      </div>
       <div className="login-card">
         <h2>Good to see you again</h2>
         <form onSubmit={handleSubmit}>
